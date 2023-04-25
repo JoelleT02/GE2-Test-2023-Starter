@@ -5,14 +5,11 @@ using UnityEngine;
 
 public class PlayerDetector : MonoBehaviour
 {
-    public FPSController fps;
-    public FollowCamera follow;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("MainCamera"))
-        {
-            fps.enabled = false;
-            follow.enabled = true;
-        }
+        if (!other.CompareTag("MainCamera")) return;
+        GetComponentInParent<StateMachine>().ChangeState(new PlayerControlState());
+        other.GetComponent<FPSController>().enabled = false;
+        other.GetComponent<FollowCamera>().enabled = true;
     }
 }
