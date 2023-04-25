@@ -9,7 +9,6 @@ public class PlayerDetector : MonoBehaviour
     {
         if (!other.CompareTag("MainCamera")) return;
         GetComponentInParent<StateMachine>().ChangeState(new PlayerControlState());
-        other.GetComponent<FPSController>().enabled = false;
-        other.GetComponent<FollowCamera>().enabled = true;
     }
+    
 }
