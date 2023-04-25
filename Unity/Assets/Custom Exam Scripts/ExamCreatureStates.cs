@@ -8,6 +8,7 @@ class PlayerControlState: State
     {
         owner.GetComponent<PlayerSteering>().enabled = true;
         GameObject.FindObjectOfType<FollowCamera>().enabled = true;
+        GameObject.Find("Enter Pod").GetComponent<AudioSource>().Play();
     }
 
     public override void Think()
@@ -22,6 +23,7 @@ class PlayerControlState: State
     {
         owner.GetComponent<PlayerSteering>().enabled = false;
         GameObject.FindObjectOfType<FollowCamera>().enabled = false;
+        GameObject.Find("Exit Pod").GetComponent<AudioSource>().Play();
     }
 }
 

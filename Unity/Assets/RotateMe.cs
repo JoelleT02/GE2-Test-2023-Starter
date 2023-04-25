@@ -5,6 +5,8 @@ using UnityEngine;
 public class RotateMe : MonoBehaviour
 {
     public float speed = 90;
+
+    public Transform target;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +16,10 @@ public class RotateMe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (target != null)
+        {
+            transform.position = target.position;
+        }
         transform.Rotate(0, speed * Time.deltaTime, 0);
     }
 }
