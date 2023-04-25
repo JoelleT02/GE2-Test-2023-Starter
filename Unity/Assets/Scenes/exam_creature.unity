@@ -1076,7 +1076,7 @@ MonoBehaviour:
   weight: 1
   force: {x: 0, y: 0, z: 0}
   boid: {fileID: 0}
-  targetGameObject: {fileID: 954640556}
+  targetGameObject: {fileID: 373635476}
   target: {x: 0, y: 0, z: 0}
 --- !u!114 &1039729044
 MonoBehaviour:
